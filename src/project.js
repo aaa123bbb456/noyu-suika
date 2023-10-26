@@ -1754,6 +1754,8 @@ window.__require = function e(t, n, o) {
                 gameOverToEnd: cc.Node
             },
             onLoad: function() {
+                cc.macro.ENABLE_TRANSPARENT_CANVAS=true
+                cc.director.setClearColor(new cc.Color(200, 240, 255, 0))
                 cc.director.getCollisionManager().enabled = !0,
                 cc.director.getPhysicsManager().enabled = !0,
                 this.gameOveEndBool = !1,
