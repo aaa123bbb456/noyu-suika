@@ -1770,6 +1770,9 @@ window.__require = function e(t, n, o) {
             play: function() {
                 console.log(1);
                 var e = this;
+                var canvas = document.getElementById('GameCanvas');
+                canvas.width=775
+                canvas.style.width='465px'
                 // adBreak({
                 //     type: "next",
                 //     name: "restart-game",
