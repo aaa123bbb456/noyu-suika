@@ -189,7 +189,8 @@ window.boot = function() {
         var MainManger = __require("MainManage");
         MainManger.init(launchScene, cc.sys.isBrowser, canvas.style.visibility);
 
-
+        canvas.width=775
+        canvas.style.width='465px'
 
 
 
