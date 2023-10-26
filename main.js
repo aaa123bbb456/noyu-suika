@@ -155,12 +155,12 @@ window.boot = function() {
             }
         }
 
-         function loadScene(launchScene) {
+//         function loadScene(launchScene) {
         // cc.director.loadScene(launchScene, null,
         // function () {
         // if (cc.sys.isBrowser) {
         // // show canvas
-         var canvas = document.getElementById('GameCanvas');
+//         var canvas = document.getElementById('GameCanvas');
         // canvas.style.visibility = '';
         // var div = document.getElementById('GameDiv');
         // if (div) {
@@ -171,10 +171,8 @@ window.boot = function() {
         // console.log('Success to load scene: ' + launchScene);
         // }
         // );
-        canvas.width=775
-        canvas.style.width='465px'
 
-         }
+//         }
 
         var launchScene = settings.launchScene;
 
