@@ -194,12 +194,12 @@
                         }
                         break;
                 }
-                //if (tempSeconds > 100) {
+                if (tempSeconds > 100) {
                     clearInterval(timer);
                     tempSeconds = 100
                     loadintT.innerHTML = 'loading......' + parseInt(tempSeconds) + '%';
-                //}
-            }, t * 1000);
+                }
+            });
         }
 
         function actualTotal() {
