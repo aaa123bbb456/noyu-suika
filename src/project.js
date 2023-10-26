@@ -119,7 +119,7 @@ window.__require = function e(t, n, o) {
                 }
                 return o(t, e), t.prototype.onLoad = function() {
                     var e = 0;
-                    e = this.type == a.TOP ? cc.winSize.height*2 / 2 : -cc.winSize.height*2 / 2, this.node.y = e + this.offset
+                    e = this.type == a.TOP ? cc.winSize.height / 2 : -cc.winSize.height / 2, this.node.y = e + this.offset
                 }, c([s({
                     type: cc.Enum(a),
                     displayName: "AdjustType"
@@ -301,7 +301,7 @@ window.__require = function e(t, n, o) {
                 return o(t, e), t.prototype.start = function() {
                     this.plane = cc.find("Canvas/playerNode/plane")
                 }, t.prototype.update = function(e) {
-                    if (this.plane.y - this.node.y >= this.node.height + cc.winSize.height*2 / 2) {
+                    if (this.plane.y - this.node.y >= this.node.height + cc.winSize.height / 2) {
                         for (var t = 0; t < 3; t++) this.node.children[t].removeComponent(cc.BoxCollider);
                         a.default.Despawn(this.node.name, this.node)
                     }
@@ -665,7 +665,7 @@ window.__require = function e(t, n, o) {
                                 u = r.x + a.default.Random(.5 * -cc.winSize.width, .05 * -cc.winSize.width) * n,
                                 d = r.y + a.default.Random(100, 500),
                                 p = cc.v2(r.x + .8 * (u - r.x), r.y + .5 * (d - r.y) + 200);
-                            c.runAction(cc.sequence(cc.spawn(cc.bezierTo(1, [r, p, cc.v2(u, d)]).easing(cc.easeCircleActionOut()), cc.moveBy(2.8, 0, 1.2 * -cc.winSize.height*2 * a.default.Random(.8, 1.2)).easing(cc.easeCubicActionIn()), cc.moveBy(2.8, a.default.Random(0, -300) * n, 0), cc.rotateBy(2, a.default.Random(360, 720) * (2 * Math.round(Math.random()) - 1)), cc.sequence(cc.moveBy(2 * (.1 * Math.random() + .3), (25 * Math.random() + 25) * (2 * Math.round(Math.random()) - 1), 0), cc.moveBy(2 * (.1 * Math.random() + .3), (25 * Math.random() + 25) * (2 * Math.round(Math.random()) - 1), 0), cc.moveBy(2 * (.1 * Math.random() + .3), (25 * Math.random() + 25) * (2 * Math.round(Math.random()) - 1), 0))), cc.callFunc(function(e, t) {
+                            c.runAction(cc.sequence(cc.spawn(cc.bezierTo(1, [r, p, cc.v2(u, d)]).easing(cc.easeCircleActionOut()), cc.moveBy(2.8, 0, 1.2 * -cc.winSize.height * a.default.Random(.8, 1.2)).easing(cc.easeCubicActionIn()), cc.moveBy(2.8, a.default.Random(0, -300) * n, 0), cc.rotateBy(2, a.default.Random(360, 720) * (2 * Math.round(Math.random()) - 1)), cc.sequence(cc.moveBy(2 * (.1 * Math.random() + .3), (25 * Math.random() + 25) * (2 * Math.round(Math.random()) - 1), 0), cc.moveBy(2 * (.1 * Math.random() + .3), (25 * Math.random() + 25) * (2 * Math.round(Math.random()) - 1), 0), cc.moveBy(2 * (.1 * Math.random() + .3), (25 * Math.random() + 25) * (2 * Math.round(Math.random()) - 1), 0))), cc.callFunc(function(e, t) {
                                 i.default.Despawn("star", e)
                             }, this, this)))
                         }
@@ -919,8 +919,8 @@ window.__require = function e(t, n, o) {
                 }, t.prototype.InScreen = function() {
                     var e = this.camera.x + cc.winSize.width / 2,
                         t = this.camera.x - cc.winSize.width / 2,
-                        n = this.camera.y + cc.winSize.height*2 / 2,
-                        o = this.camera.y - cc.winSize.height*2 / 2;
+                        n = this.camera.y + cc.winSize.height / 2,
+                        o = this.camera.y - cc.winSize.height / 2;
                     return this.node.x < e + this.node.width / 2 && this.node.x > t - this.node.width / 2 && this.node.y < n + this.node.height / 2 && this.node.y > o + this.node.height / 2
                 }, c([s(cc.String)], t.prototype, "cameraUrl", void 0), t = c([r], t)
             }(cc.Component);
@@ -974,7 +974,7 @@ window.__require = function e(t, n, o) {
                 }
                 var n;
                 return o(t, e), n = t, t.prototype.onLoad = function() {
-                    null != n.Instance && n.Instance.destroy(), n.Instance = this, this.clickMask.setContentSize(cc.winSize.width, cc.winSize.height*2), this.bgMask.setContentSize(cc.winSize.width, cc.winSize.height*2), this.failedUiBox.y = cc.winSize.height*2 / 2 + this.failedUiBox.height / 2
+                    null != n.Instance && n.Instance.destroy(), n.Instance = this, this.clickMask.setContentSize(cc.winSize.width, cc.winSize.height), this.bgMask.setContentSize(cc.winSize.width, cc.winSize.height), this.failedUiBox.y = cc.winSize.height / 2 + this.failedUiBox.height / 2
                 }, t.prototype.start = function() {
                     var e = i.default.returnCurrentLanType();
                     1 != e && (this.bencichengji.getComponent(cc.Sprite).spriteFrame = this.bencichengjiarr[e - 1], this.gengduoyouxi.getComponent(cc.Sprite).spriteFrame = this.gengduoyouxiarr[e - 1]), this.continueTip.getComponent(cc.Label).string = 1 == e ? "\u70b9\u51fb\u7ee7\u7eed" : 2 == e ? "\u9ede\u64ca\u7e7c\u7e8c" : 4 == e ? "\ud074\ub9ad \ud558\uc5ec \uacc4\uc18d" : "Click Continue", this.reStartBtn.runAction(cc.repeatForever(cc.sequence(cc.scaleTo(.5, 1.1), cc.scaleTo(.55, 1), cc.delayTime(.5)))), cc.tween(this.moreGameBtn).to(.5, {
@@ -994,14 +994,14 @@ window.__require = function e(t, n, o) {
                     var n = this;
                     this.scheduleOnce(function() {
                         r.default.Instance.HideScorePanel(), n.levelTxt.string = r.default.Instance.level.toString(), n.scoreLabel.string = s.default.score.toString(), n.highScoreLabel.string = t, n.resultTxt.string = n.GetContentByScore(e), n.overTxt.string = "\u5f53\u524d\u5173\u5361\u5df2\u5b8c\u6210" + Math.floor(r.default.Instance.nowYQ / r.default.Instance.passlevelYQ * 100) + "%", n.canClick = !1, n.levelTxt.string = e, n.bgMask.runAction(cc.fadeTo(.36, 150)), n.scheduleOnce(function() {
-                            i.default.CenteredUi(10, this.di, this.levelTxt.node, this.guan), this.failedUiBox.y = cc.winSize.height*2 / 2 + this.failedUiBox.height / 2, this.failedUiBox.runAction(cc.sequence(cc.moveTo(.36, this.failedBoxPos).easing(cc.easeBackOut()), cc.callFunc(function() {
+                            i.default.CenteredUi(10, this.di, this.levelTxt.node, this.guan), this.failedUiBox.y = cc.winSize.height / 2 + this.failedUiBox.height / 2, this.failedUiBox.runAction(cc.sequence(cc.moveTo(.36, this.failedBoxPos).easing(cc.easeBackOut()), cc.callFunc(function() {
                                 this.clickMask.on(cc.Node.EventType.TOUCH_START, this.OnClickCloseMask, this), this.moreGameBtn.on(cc.Node.EventType.TOUCH_START, this.OnClickMoreGame, this), this.continueTip.opacity = 0, this.continueTip.runAction(cc.repeatForever(cc.sequence(cc.fadeIn(.5), cc.delayTime(.5), cc.fadeOut(.5)))), this.canClick = !0
                             }, this)))
                         }, 0)
                     }, .5)
                 }, t.prototype.HideFailedUi = function() {
                     this.canClick = !1;
-                    var e = cc.v2(0, cc.winSize.height*2 / 2 + this.failedUiBox.height / 2);
+                    var e = cc.v2(0, cc.winSize.height / 2 + this.failedUiBox.height / 2);
                     this.failedUiBox.runAction(cc.moveTo(.3, e).easing(cc.easeBackIn()))
                 }, t.prototype.OnClickCloseMask = function() {
                     this.canClick && 0 == cc.find("Canvas/uiEffectPanel").childrenCount && a.default.Instance.RestartGame()
@@ -1234,7 +1234,7 @@ window.__require = function e(t, n, o) {
                             a = 360 * Math.random(),
                             i = cc.v2(o.x + Math.sin(c) * a, o.y + Math.cos(c) * a + 150);
                         cc.v2(i.x, i.y + 100);
-                        o.runAction(cc.sequence(cc.spawn(cc.moveTo(.255, i).easing(cc.easeCubicActionOut()), cc.scaleTo(.255, 1 * Math.random() + .5), cc.moveBy(4.25, cc.v2(0, .8 * -cc.winSize.height*2 - Math.random() * cc.winSize.height*2)), cc.rotateBy(4.25, (1800 * Math.random() + 1200) * (Math.random() > .5 ? 1 : -1)), cc.sequence(cc.moveBy(.17 * (8 * Math.random() + 6), cc.v2((100 * Math.random() + 100) * (Math.random() > .5 ? -1 : 1), 0)), cc.moveBy(.17 * (8 * Math.random() + 6), cc.v2((100 * Math.random() + 100) * (Math.random() > .5 ? -1 : 1), 0)), cc.moveBy(.17 * (8 * Math.random() + 6), cc.v2((100 * Math.random() + 100) * (Math.random() > .5 ? -1 : 1), 0))), cc.sequence(cc.delayTime(.17 * s.default.getRandomNum(20, 24.5)), cc.fadeOut(.17))), cc.removeSelf(!0)))
+                        o.runAction(cc.sequence(cc.spawn(cc.moveTo(.255, i).easing(cc.easeCubicActionOut()), cc.scaleTo(.255, 1 * Math.random() + .5), cc.moveBy(4.25, cc.v2(0, .8 * -cc.winSize.height - Math.random() * cc.winSize.height)), cc.rotateBy(4.25, (1800 * Math.random() + 1200) * (Math.random() > .5 ? 1 : -1)), cc.sequence(cc.moveBy(.17 * (8 * Math.random() + 6), cc.v2((100 * Math.random() + 100) * (Math.random() > .5 ? -1 : 1), 0)), cc.moveBy(.17 * (8 * Math.random() + 6), cc.v2((100 * Math.random() + 100) * (Math.random() > .5 ? -1 : 1), 0)), cc.moveBy(.17 * (8 * Math.random() + 6), cc.v2((100 * Math.random() + 100) * (Math.random() > .5 ? -1 : 1), 0))), cc.sequence(cc.delayTime(.17 * s.default.getRandomNum(20, 24.5)), cc.fadeOut(.17))), cc.removeSelf(!0)))
                     }
                 }, t.prototype.ShowLandParti = function(e, t) {
                     for (var n = t, o = [cc.v2(e.position.x - 8, e.position.y), cc.v2(e.position.x + 8, e.position.y)], c = 0; c < o.length; c++) {
@@ -1310,7 +1310,7 @@ window.__require = function e(t, n, o) {
                 }
                 var n;
                 return o(t, e), n = t, t.prototype.onLoad = function() {
-                    null != n.Instance && n.Instance.destroy(), n.Instance = this, cc.find("Canvas/bgLayer").setContentSize(cc.winSize.width, cc.winSize.height*2)
+                    null != n.Instance && n.Instance.destroy(), n.Instance = this, cc.find("Canvas/bgLayer").setContentSize(cc.winSize.width, cc.winSize.height)
                 }, t.prototype.start = function() {
                     this.PhysicsSystemCtrl(!0, !1)
                 }, t.prototype.update = function(e) {}, t.prototype.lateUpdate = function() {
@@ -1759,7 +1759,7 @@ window.__require = function e(t, n, o) {
                 this.gameOveEndBool = !1,
                 this.gameOverNum = 0,
                 this.gameWidth = cc.winSize.width,
-                this.gameHeight = cc.winSize.height*2,
+                this.gameHeight = cc.winSize.height,
                 o.playNum,
                 o.playNum++,
                 c.loadingLayer("panel/LinkIconSpr"),
@@ -2380,7 +2380,7 @@ window.__require = function e(t, n, o) {
                         this.isTurn = !0, this.setMosquitoSpeed()
                     }, 2)
                 }, t.prototype.checkOnEdge = function(e) {
-                    this.node.x > cc.winSize.width / 2 + 100 ? e ? this.setMosquitoBackSpeed() : this.node.active = !1 : this.node.x < -cc.winSize.width / 2 - 100 ? e ? this.setMosquitoBackSpeed() : this.node.active = !1 : this.node.y > cc.winSize.height*2 / 2 + 100 ? e ? this.setMosquitoBackSpeed() : this.node.active = !1 : this.node.y < -cc.winSize.height*2 / 2 - 100 && (e ? this.setMosquitoBackSpeed() : this.node.active = !1)
+                    this.node.x > cc.winSize.width / 2 + 100 ? e ? this.setMosquitoBackSpeed() : this.node.active = !1 : this.node.x < -cc.winSize.width / 2 - 100 ? e ? this.setMosquitoBackSpeed() : this.node.active = !1 : this.node.y > cc.winSize.height / 2 + 100 ? e ? this.setMosquitoBackSpeed() : this.node.active = !1 : this.node.y < -cc.winSize.height / 2 - 100 && (e ? this.setMosquitoBackSpeed() : this.node.active = !1)
                 }, t.prototype.getAngle = function(e, t, n, o) {
                     var c = Math.abs(e - n),
                         a = Math.abs(t - o),
@@ -2442,7 +2442,7 @@ window.__require = function e(t, n, o) {
                 }
                 return o(t, e), t.prototype.start = function() {}, t.prototype.onLoad = function() {
                     var e = new cc.RenderTexture;
-                    e.initWithSize(cc.winSize.width, cc.winSize.height*2);
+                    e.initWithSize(cc.winSize.width, cc.winSize.height);
                     var t = new cc.SpriteFrame;
                     t.setTexture(e), this.waterCamera.targetTexture = e, this.waterConnect.spriteFrame = t
                 }, t.prototype.createWater = function() {
@@ -3565,7 +3565,7 @@ console.log('12')
                 iconSpr1: cc.Node
             },
             onLoad: function() {
-                if (this._imageArr = [], this.stopUpdateBool = !0, this.gameWidth = cc.winSize.width, this.gameHeight = cc.winSize.height*2, null != o.recGameData && "" != o.recGameData && null != o.recGameimg1 && "" != o.recGameimg1) {
+                if (this._imageArr = [], this.stopUpdateBool = !0, this.gameWidth = cc.winSize.width, this.gameHeight = cc.winSize.height, null != o.recGameData && "" != o.recGameData && null != o.recGameimg1 && "" != o.recGameimg1) {
                     var e = 50 - this.gameWidth / 2,
                         t = this.gameHeight - 50 - this.gameHeight / 2;
                     null != o.recGamePos && "" != o.recGamePos && (1 == o.recGamePos ? (e = 50 - this.gameWidth / 2, t = this.gameHeight - 50 - this.gameHeight / 2) : 2 == o.recGamePos ? (e = this.gameWidth - 50 - this.gameWidth / 2, t = this.gameHeight - 50 - this.gameHeight / 2) : 3 == o.recGamePos ? (e = this.gameWidth - 50 - this.gameWidth / 2, t = 50 - this.gameHeight / 2) : 4 == o.recGamePos && (e = 50 - this.gameWidth / 2, t = 50 - this.gameHeight / 2));
@@ -3838,7 +3838,7 @@ console.log('12')
                     return t.startPanel = null, t.titleSpr = null, t.startBtn = null, t.title = [], t
                 }
                 return o(t, e), t.prototype.onLoad = function() {
-                    this.startPanel.setContentSize(cc.winSize.width, cc.winSize.height*2), this.startPanel.children[0].setContentSize(cc.winSize.width, cc.winSize.height*2), this.startPanel.children[0].children[0].setContentSize(cc.winSize.width, cc.winSize.height*2)
+                    this.startPanel.setContentSize(cc.winSize.width, cc.winSize.height), this.startPanel.children[0].setContentSize(cc.winSize.width, cc.winSize.height), this.startPanel.children[0].children[0].setContentSize(cc.winSize.width, cc.winSize.height)
                 }, t.prototype.start = function() {
                     this.startPanel.children[1].scaleX = 0, this.startPanel.children[1].runAction(cc.scaleTo(.5, .9).easing(cc.easeBackOut())), this.startPanel.children[2].runAction(cc.repeatForever(cc.sequence(cc.scaleTo(.5, 1.1), cc.scaleTo(.5, 1), cc.delayTime(.5)))), this.initTitle(), cc.director.preloadScene("MainGameScene")
                 }, t.prototype.StartGame = function() {
