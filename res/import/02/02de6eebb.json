@@ -2271,7 +2271,7 @@
           },
           "_designResolution": {
             "__type__": "cc.Size",
-            "width": 1720,
+            "width": 720,
             "height": 1280
           },
           "_fitWidth": false,
