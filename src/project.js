@@ -2741,7 +2741,7 @@ window.__require = function e(t, n, o) {
                     t ? cc.error(t) : (e.spriteFrame = new cc.SpriteFrame(n), e.bgSprite.spriteFrame = e.spriteFrame)
                 });
                 var t = this.toastNode.addComponent(cc.Widget);
-                t.isAlignBottom = !0, t.isAbsoluteBottom = !1, t.bottom = .8, t.isAlignHorizontalCenter = !0, t.horizontalCenter = 0, t.alignMode = cc.Widget.AlignMode.ONCE;
+                t.isAlignBottom = !0, t.isAbsoluteBottom = !1, t.bottom = .8, t.isAlignHorizontalCenter = !0, t.horizontalCenter = 0, t.alignMode = cc.Widget.AlignMode.ON_WINDOW_RESIZE;
                 var n = this.toastNode.addComponent(cc.Layout);
                 n.resizeMode = cc.Layout.ResizeMode.CONTAINER, n.padding = 5, this.textNode = new cc.Node, this.toastNode.addChild(this.textNode), this.textNode.position = cc.Vec2.ZERO, this.textLabel = this.textNode.addComponent(cc.Label), this.textLabel.fontSize = 50, this.textLabel.lineHeight = 50
             }
