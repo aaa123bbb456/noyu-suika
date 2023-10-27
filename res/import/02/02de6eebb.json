@@ -1893,7 +1893,7 @@
       "rect": [
         0,
         0,
-        720,
+        2095,
         1280
       ],
       "offset": [
@@ -1901,7 +1901,7 @@
         0
       ],
       "originalSize": [
-        720,
+        2095,
         1280
       ],
       "capInsets": [
@@ -2274,8 +2274,8 @@
             "width": 720,
             "height": 1280
           },
-          "_fitWidth": true,
-          "_fitHeight": false
+          "_fitWidth": false,
+          "_fitHeight": true
         },
         {
           "__type__": "fd2c5sUJdNElqycZdmzNC7g",
@@ -3052,7 +3052,7 @@
       ],
       "_contentSize": {
         "__type__": "cc.Size",
-        "width": 720,
+        "width": 2095,
         "height": 1280
       },
       "_trs": {
@@ -5226,7 +5226,7 @@
       },
       "_contentSize": {
         "__type__": "cc.Size",
-        "width": 720,
+        "width": 2095,
         "height": 2000
       },
       "_trs": {
@@ -5985,7 +5985,7 @@
       },
       "_contentSize": {
         "__type__": "cc.Size",
-        "width": 720,
+        "width": 2095,
         "height": 1280
       },
       "_trs": {
