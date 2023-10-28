@@ -1827,7 +1827,7 @@ window.__require = function e(t, n, o) {
             start: function() {
                 console.log(this);
                 var bgLayer=this.node.getChildByName('bgLayer');
-                bgLayer.width=bgLayer._renderComponent.spriteFrame.getOriginalSize().width
+                setTimeout(()=>bgLayer.width=bgLayer._renderComponent.spriteFrame.getOriginalSize().width,1000)
             },
             update: function(e) {
                 this.gameOverGoToOVer()
