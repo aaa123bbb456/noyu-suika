@@ -1766,9 +1766,6 @@ window.__require = function e(t, n, o) {
                 o.mainGameJs = this, o.publicGameBool || this.play()
             },
             play: function() {
-                console.log(this);
-                var bgLayer=this.node.getChildByName('bgLayer');
-                bgLayer.width=bgLayer._components[0].spriteFrame.getOriginalSize().width
                 var e = this;
 //                var canvas = document.getElementById('GameCanvas');
 //                canvas.width=720
@@ -1827,7 +1824,11 @@ window.__require = function e(t, n, o) {
                     name: "restart-game"
                 }), a.gotoEndLayer1()
             },
-            start: function() {},
+            start: function() {
+                console.log(this);
+                var bgLayer=this.node.getChildByName('bgLayer');
+                bgLayer.width=bgLayer._renderComponent.spriteFrame.getOriginalSize().width
+            },
             update: function(e) {
                 this.gameOverGoToOVer()
             },
