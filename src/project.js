@@ -1767,8 +1767,8 @@ window.__require = function e(t, n, o) {
             },
             play: function() {
                 console.log(this);
-                this.bgLayer.setType(cc.Sprite.Type.Tiled)
-//                this.bgLayer.setContentSize(720,1280)
+                var bgLayer=this.node.getChildByName('bgLayer');
+                bgLayer.width=bgLayer._renderComponent.spriteFrame.getOriginalSize().width
                 var e = this;
 //                var canvas = document.getElementById('GameCanvas');
 //                canvas.width=720
