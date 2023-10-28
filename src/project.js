@@ -1767,6 +1767,8 @@ window.__require = function e(t, n, o) {
             },
             play: function() {
                 console.log(this);
+                this.bgLayer.setType(cc.Sprite.Type.Tiled)
+//                this.bgLayer.setContentSize(720,1280)
                 var e = this;
 //                var canvas = document.getElementById('GameCanvas');
 //                canvas.width=720
@@ -3449,8 +3451,6 @@ console.log('12')
             },
             onLoad: function() {
                 this.bgLayer.color = cc.color("#68b951"), this.standardScore = c.standScore, this.game_max_score = 200, this.rigthBtnGameName = null, this.rightBtnGameUrl = null, this.UIPosChange(), this.addClickBtns();
-//                this.bgLayer.setType(cc.Sprite.Type.Tiled)
-                this.bgLayer.setContentSize(720,1280)
                 var e = "\u6700\u9ad8\u7eaa\u5f55:",
                     t = this.returnCurrentLanType();
                 e = 1 == t ? "\u6700\u9ad8\u7eaa\u5f55:" : 2 == t ? "\u6700\u9ad8\u7d00\u9304:" : 4 == t ? "\ucd5c\uace0 \uae30\ub85d:" : "Highest Record:";
