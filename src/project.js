@@ -1766,8 +1766,10 @@ window.__require = function e(t, n, o) {
                 o.mainGameJs = this, o.publicGameBool || this.play()
             },
             play: function() {
-                console.log(1);
                 var e = this;
+//                var canvas = document.getElementById('GameCanvas');
+//                canvas.width=720
+//                canvas.style.width='383px'
                 // adBreak({
                 //     type: "next",
                 //     name: "restart-game",
@@ -1822,7 +1824,11 @@ window.__require = function e(t, n, o) {
                     name: "restart-game"
                 }), a.gotoEndLayer1()
             },
-            start: function() {},
+            start: function() {
+                console.log(this);
+                var bgLayer=this.node.getChildByName('bgLayer');
+                bgLayer.width=bgLayer._renderComponent.spriteFrame.getOriginalSize().width
+            },
             update: function(e) {
                 this.gameOverGoToOVer()
             },
@@ -2736,7 +2742,7 @@ window.__require = function e(t, n, o) {
                     t ? cc.error(t) : (e.spriteFrame = new cc.SpriteFrame(n), e.bgSprite.spriteFrame = e.spriteFrame)
                 });
                 var t = this.toastNode.addComponent(cc.Widget);
-                t.isAlignBottom = !0, t.isAbsoluteBottom = !1, t.bottom = .8, t.isAlignHorizontalCenter = !0, t.horizontalCenter = 0, t.alignMode = cc.Widget.AlignMode.ONCE;
+                t.isAlignBottom = !0, t.isAbsoluteBottom = !1, t.bottom = .8, t.isAlignHorizontalCenter = !0, t.horizontalCenter = 0, t.alignMode = cc.Widget.AlignMode.ALWAYS;
                 var n = this.toastNode.addComponent(cc.Layout);
                 n.resizeMode = cc.Layout.ResizeMode.CONTAINER, n.padding = 5, this.textNode = new cc.Node, this.toastNode.addChild(this.textNode), this.textNode.position = cc.Vec2.ZERO, this.textLabel = this.textNode.addComponent(cc.Label), this.textLabel.fontSize = 50, this.textLabel.lineHeight = 50
             }

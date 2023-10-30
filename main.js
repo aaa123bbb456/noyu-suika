@@ -155,12 +155,12 @@ window.boot = function() {
             }
         }
 
-        // function loadScene(launchScene) {
+//         function loadScene(launchScene) {
         // cc.director.loadScene(launchScene, null,
         // function () {
         // if (cc.sys.isBrowser) {
         // // show canvas
-        // var canvas = document.getElementById('GameCanvas');
+//         var canvas = document.getElementById('GameCanvas');
         // canvas.style.visibility = '';
         // var div = document.getElementById('GameDiv');
         // if (div) {
@@ -172,7 +172,7 @@ window.boot = function() {
         // }
         // );
 
-        // }
+//         }
 
         var launchScene = settings.launchScene;
 
@@ -188,7 +188,6 @@ window.boot = function() {
         console.log("landscape,", launchScene);
         var MainManger = __require("MainManage");
         MainManger.init(launchScene, cc.sys.isBrowser, canvas.style.visibility);
-
 
 
 
