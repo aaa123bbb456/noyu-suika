@@ -987,7 +987,7 @@ window.__require = function e(t, n, o) {
                         scale: .9
                     }).union().repeatForever().start()
                 }, t.prototype.update = function(e) {}, t.prototype.adsButtonFunc2 = function() {
-                    window.location.href = "https://activity.doumobfour.club/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=189da8b9d29788c1cf058587fa2f7b9c&1=1"
+//                    window.location.href = "https://activity.doumobfour.club/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=189da8b9d29788c1cf058587fa2f7b9c&1=1"
                 }, t.prototype.bannerButtonFunc = function() {
                     window.location.href = "https://interaction.clotfun.online/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=1baa3dd0d2eeb6e18a5f7a6d6e410e1a&from=H5&1=1"
                 }, t.prototype.ShowFailedUi = function(e, t) {
@@ -1766,10 +1766,11 @@ window.__require = function e(t, n, o) {
                 o.mainGameJs = this, o.publicGameBool || this.play()
             },
             play: function() {
+                console.log(1);
                 var e = this;
-//                var canvas = document.getElementById('GameCanvas');
-//                canvas.width=720
-//                canvas.style.width='383px'
+                const music = new Audio('res/bgm.mp3');
+                music.play();
+                music.loop = true;
                 // adBreak({
                 //     type: "next",
                 //     name: "restart-game",
@@ -3372,11 +3373,19 @@ window.__require = function e(t, n, o) {
                         c == r && c < 9 && r < 9 ? (this.pengzhuangCount += 1, 0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + 1, u.default.Instance.SetScoreTween(a.default.score), n.node.getComponent(cc.PhysicsCircleCollider).radius = 0, n.node.getComponent(cc.PhysicsCircleCollider).apply(), this.node.getComponent(cc.PhysicsCircleCollider).radius = 0, this.node.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(t.node).to(.1, {
                             position: n.node.position
                         }).call(function() {
+                            try{
                             i.default.Instance.createFruitSui(o.fruitNumber, n.node.position), i.default.Instance.createFruitL(o.fruitNumber, n.node.position, n.node.width), i.default.Instance.createLevelUpFruit(o.fruitNumber + 1, n.node.position), n.node.active = !1, t.node.active = !1, n.node.destroy(), t.node.destroy()
+                            }catch(e){
+                                console.error(e)
+                            }
                         }).start())) : c == r && 9 == c && 9 == r && (this.pengzhuangCount += 1, 0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + 1, u.default.Instance.SetScoreTween(a.default.score), n.node.getComponent(cc.PhysicsCircleCollider).radius = 0, n.node.getComponent(cc.PhysicsCircleCollider).apply(), this.node.getComponent(cc.PhysicsCircleCollider).radius = 0, this.node.getComponent(cc.PhysicsCircleCollider).apply(), a.default.playerTouch = !1, cc.tween(t.node).to(.1, {
                             position: n.node.position
                         }).call(function() {
+                            try{
                             i.default.Instance.createFruitSui(o.fruitNumber, n.node.position), i.default.Instance.createFruitL(o.fruitNumber, n.node.position, n.node.width), i.default.Instance.createLevelUpFruit(o.fruitNumber + 1, n.node.position);
+                            }catch(e){
+                                console.error(e)
+                            }
                             var e = cc.find("Canvas/upEffectParent").getChildByName("daxigua");
                             e.active = !0, e.opacity = 0, cc.tween(e).to(.5, {
                                 opacity: 150
@@ -4000,3 +4009,4 @@ console.log('12')
         "./GameManager": "GameManager"
     }]
 }, {}, ["HttpManagerJs", "LanguageSetJs", "LoadSceneJs", "AniTools", "MainGameJS", "ToolsJs", "resArr", "MainManage", "AddScore", "AdjusWithHeight", "AudioManager", "AutoDestroy", "DataManager", "EffectCenter", "FailedUi", "GameFunction", "GameManager", "InputController", "KnifeCollision", "MainGameUi", "NewAttribute", "PhysicsParticle", "Rocker", "RotateAround", "Stack", "WallUpdate", "fruitData", "peaCannonAI", "startPanel", "wineObsmove", "winerCollision", "GameConfig", "GameUiTools", "DynamicLoad", "EffectSprite", "PlayerInfo", "PoolManager", "RandomFly", "RenderWater", "Shake", "SpriteManager", "Toast", "Utils", "bfPrefabJs", "gameOverJs", "linkHttpIconJs", "startGameJs", "use_v2.1.x_cc.Action"]);
+adBreak=()=>{}

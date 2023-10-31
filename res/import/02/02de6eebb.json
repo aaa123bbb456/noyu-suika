@@ -3052,7 +3052,7 @@
       ],
       "_contentSize": {
         "__type__": "cc.Size",
-        "width": 2095,
+        "width": 720,
         "height": 1280
       },
       "_trs": {
@@ -5226,7 +5226,7 @@
       },
       "_contentSize": {
         "__type__": "cc.Size",
-        "width": 2095,
+        "width": 720,
         "height": 2000
       },
       "_trs": {
@@ -5985,7 +5985,7 @@
       },
       "_contentSize": {
         "__type__": "cc.Size",
-        "width": 2095,
+        "width": 720,
         "height": 1280
       },
       "_trs": {
