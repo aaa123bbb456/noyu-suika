@@ -62,7 +62,7 @@
 
 </head>
 
-<body style="margin: 0; background: #ddd;" align="center">
+<body style="margin: 0; background: #ddd;background-image: url('loadingBackground.png');" align="center">
 
     <div id="canvasDiv" style="width:100%;height:100%;">
         <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
@@ -131,7 +131,7 @@
         var loadintT = document.getElementById("loadingText");
         var loadintGif = document.getElementById("loadingImg")
         setTimeout(function() {
-            //loadintGif.remove();
+            loadintGif.remove();
             loadintT.style.display = ""
             updateLabView(0.1);
         })
