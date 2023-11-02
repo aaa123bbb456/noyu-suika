@@ -1769,9 +1769,6 @@ window.__require = function e(t, n, o) {
                 console.log(1);
                 var e = this;
                 document.getElementById("background")?.remove()
-                const music = new Audio('res/bgm.mp3');
-                music.play();
-                music.loop = true;
                 // adBreak({
                 //     type: "next",
                 //     name: "restart-game",
